@@ -19,7 +19,7 @@ There are Various types of inheritance in Java:
 ### Inheritance In Java
 JAVA INHERITANCE is a mechanism in which one class acquires the property of another class. In Java, when an "Is-A" relationship exists between two classes, we use Inheritance. The parent class is called a super class and the inherited class is called a subclass. The keyword extends is used by the sub class to inherit the features of super class.
 
-### Java Inheritance systax
+### Java Inheritance syntax
 ```markdown
 class subClass extends superClass  
 {  
@@ -117,3 +117,92 @@ public class Rectangle extends Shape{
 5) Error = ? variable b is final 
  - To fix this comment out or remove/delete he statement ```obj.b=200;```
 
+### Interface
+
+#### What is an Interface?
+An interface is just like Java Class, but it only has static constants and abstract method. Java uses Interface to implement multiple inheritance. A Java class can implement multiple Java Interfaces. All methods in an interface are implicitly public and abstract
+
+#### Example for Implementing Interface
+```class Dog implements Pet```
+
+```interface RidableAnimal extends Animal, Vehicle```
+
+#### Why is an Interface required?
+Suppose you have a requirement where class "dog" inheriting class "animal" and "Pet". But you cannot extend two classes in Java. So what would you do? The solution is Interface.
+
+#### Syntax for Declaring Interface
+```markdown
+interface {
+//methods
+}
+```
+
+#### Java Interface Example:
+```markdown
+interface Pet{
+  public void test();
+}
+class Dog implements Pet{
+   public void test(){
+     System.out.println("Interface Method Implemented");
+  }
+   public static void main(String args[]){
+     Pet p = new Dog();
+     p.test();
+  }
+}
+```
+
+#### Interface Vs. Abstract Class
+An abstract class permits you to make functionality that subclasses can implement or override whereas an interface only permits you to state functionality but not to implement it. A class can extend only one abstract class while a class can implement multiple interfaces
+
+#### Sample code for Interface and Abstract Class in Java
+
+Following is sample code to create an interface and abstract class in Java 
+
+##### Interface Syntax
+```
+interface name{
+//methods
+}
+```
+##### Java Interface Example:
+```
+interface Pet {
+    public void test();
+}
+class Dog implements Pet {
+    public void test() {
+        System.out.println("Interface Method Implemented");
+    }
+    public static void main(String args[]) {
+        Pet p = new Dog();
+        p.test();
+    }
+}
+```
+
+##### Abstract Class Syntax
+```
+abstract class name{
+    // code
+}
+```
+##### Abstract class example:
+```
+abstract class Shape {
+    int b = 20;
+    abstract public void calculateArea();
+}
+
+public class Rectangle extends Shape {
+    public static void main(String args[]) {
+        Rectangle obj = new Rectangle();
+        obj.b = 200;
+        obj.calculateArea();
+    }
+    public void calculateArea() {
+        System.out.println("Area is " + (obj.b * obj.b));
+    }
+}
+```
