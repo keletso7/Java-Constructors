@@ -206,3 +206,6 @@ public class Rectangle extends Shape {
     }
 }
 ```
+
+#### Constructor in Java with EXAMPLE
+##### What is a constructor in Java?
